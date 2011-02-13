@@ -1,12 +1,12 @@
 Summary:	Clean up and pretty-print HTML/XHTML/XML
 Name:		tidyp
-Version:	1.02
+Version:	1.04
 Release:	1
 License:	W3C
 Group:		Applications/Text
 URL:		http://www.tidyp.com/
 Source0:	http://github.com/downloads/petdance/tidyp/%{name}-%{version}.tar.gz
-Patch1:		%{name}-cflags.patch
+# Source0-md5:	00a6b804f6625221391d010ca37178e1
 Requires:	libtidyp = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,7 +32,6 @@ Development files for libtidyp.
 
 %prep
 %setup -q
-%patch1 -p1
 
 # Fix permissions for debuginfo
 chmod -x src/{mappedio.*,version.h}
