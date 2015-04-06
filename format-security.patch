@@ -1,0 +1,55 @@
+--- tidyp-1.04/src/localize.c~	2010-09-17 02:36:44.000000000 +0000
++++ tidyp-1.04/src/localize.c	2015-04-06 10:26:27.467359594 +0000
+@@ -1351,14 +1351,14 @@
+ {
+     ctmbstr fmt = GetFormatFromCode(code);
+     doc->badAccess |= BA_WAI;
+-    messageNode( doc, TidyAccess, node, fmt );
++    messageNode( doc, TidyAccess, node, "%s", fmt );
+ }
+ 
+ void TY_(ReportAccessError)( TidyDocImpl* doc, Node* node, uint code )
+ {
+     ctmbstr fmt = GetFormatFromCode(code);
+     doc->badAccess |= BA_WAI;
+-    messageNode( doc, TidyAccess, node, fmt );
++    messageNode( doc, TidyAccess, node, "%s", fmt );
+ }
+ 
+ #endif /* SUPPORT_ACCESSIBILITY_CHECKS */
+@@ -1377,7 +1377,7 @@
+     switch (code)
+     {
+     case NESTED_QUOTATION:
+-        messageNode(doc, TidyWarning, rpt, fmt);
++        messageNode(doc, TidyWarning, rpt, "%s", fmt);
+         break;
+ 
+     case OBSOLETE_ELEMENT:
+@@ -1458,7 +1458,7 @@
+     case INCONSISTENT_NAMESPACE:
+     case DOCTYPE_AFTER_TAGS:
+     case DTYPE_NOT_UPPER_CASE:
+-        messageNode(doc, TidyWarning, rpt, fmt);
++        messageNode(doc, TidyWarning, rpt, "%s", fmt);
+         break;
+ 
+     case COERCE_TO_ENDTAG:
+@@ -1477,7 +1477,7 @@
+     case ENCODING_IO_CONFLICT:
+     case MISSING_DOCTYPE:
+     case SPACE_PRECEDING_XMLDECL:
+-        messageNode(doc, TidyWarning, node, fmt);
++        messageNode(doc, TidyWarning, node, "%s", fmt);
+         break;
+ 
+     case TRIM_EMPTY_ELEMENT:
+@@ -1526,7 +1526,7 @@
+     {
+     case SUSPECTED_MISSING_QUOTE:
+     case DUPLICATE_FRAMESET:
+-        messageNode(doc, TidyError, rpt, fmt);
++        messageNode(doc, TidyError, rpt, "%s", fmt);
+         break;
+ 
+     case UNKNOWN_ELEMENT:

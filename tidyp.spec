@@ -6,11 +6,12 @@ Summary:	Clean up and pretty-print HTML/XHTML/XML
 Summary(pl.UTF-8):	Czyszczenie i ładne wypisywanie HTML-a/XHTML-a/XML-a
 Name:		tidyp
 Version:	1.04
-Release:	1
+Release:	2
 License:	W3C
 Group:		Applications/Text
 Source0:	http://github.com/downloads/petdance/tidyp/%{name}-%{version}.tar.gz
 # Source0-md5:	00a6b804f6625221391d010ca37178e1
+Patch0:		format-security.patch
 URL:		http://www.tidyp.com/
 Requires:	libtidyp = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -62,6 +63,7 @@ Statyczna biblioteka libtidyp.
 
 %prep
 %setup -q
+%patch0 -p1
 
 # Fix permissions for debuginfo
 chmod -x src/{mappedio.*,version.h}
