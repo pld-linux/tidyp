@@ -63,7 +63,7 @@ Statyczna biblioteka libtidyp.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # Fix permissions for debuginfo
 chmod -x src/{mappedio.*,version.h}
