@@ -12,7 +12,9 @@ Group:		Applications/Text
 Source0:	http://github.com/downloads/petdance/tidyp/%{name}-%{version}.tar.gz
 # Source0-md5:	00a6b804f6625221391d010ca37178e1
 Patch0:		format-security.patch
-URL:		http://www.tidyp.com/
+# dead ("for sale")
+#URL:		http://www.tidyp.com/
+URL:		https://github.com/petdance/tidyp
 Requires:	libtidyp = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
