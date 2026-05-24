@@ -6,7 +6,7 @@ Summary:	Clean up and pretty-print HTML/XHTML/XML
 Summary(pl.UTF-8):	Czyszczenie i ładne wypisywanie HTML-a/XHTML-a/XML-a
 Name:		tidyp
 Version:	1.04
-Release:	2
+Release:	3
 License:	W3C
 Group:		Applications/Text
 Source0:	http://github.com/downloads/petdance/tidyp/%{name}-%{version}.tar.gz
